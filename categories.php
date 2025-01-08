@@ -17,19 +17,6 @@ if (isset($_GET["search_query"]) && $_GET["search_query"] != "") {
 
 $categories = $db->query($sql, $params)->fetchAll();
 
-echo "<h1>Kategorijas</h1>";
-echo "<form action='/categories.php'>"; 
-echo "<input name='search_query' />";
-echo "<button type='submit'>Meklēt</button>";
-echo "</form>";
 
-if (count($categories) == 0) {
-    echo "Nav atrastas kategorijas!!🤔💋";
-} else {
-    echo "<ul>";
-    foreach ($categories as $category) {
-        echo "<li>" . $category["category_name"] . "</li>"; 
-    }
-    echo "</ul>";
-}
+require "categories/index2.view.php";
 ?>
