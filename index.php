@@ -1,6 +1,7 @@
 <?php
 require "functions.php";
 require "Database.php";
+include('controllers/router.php');
 
 $config = require("config.php");
 
@@ -22,7 +23,10 @@ $posts = $db->query($sql, $params)->fetchAll();
 $d = "Liels";
 $d .= "suns";
 
+$pageTitle = "Blogs";
+$style = "css/style1.css";
 require "views/index.view.php";
+
 
 
 

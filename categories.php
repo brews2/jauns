@@ -2,7 +2,7 @@
 require "functions.php";
 require "Database.php";
 require "config.php";
-$config = require("config.php");
+$config = require("controllers/config.php");
 
 $db = new Database($config["database"]);
 
@@ -18,5 +18,5 @@ if (isset($_GET["search_query"]) && $_GET["search_query"] != "") {
 $categories = $db->query($sql, $params)->fetchAll();
 
 
-require "categories/index2.view.php";
+require "views/categories.view.php";
 ?>

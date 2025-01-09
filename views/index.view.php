@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
-    <link rel="stylesheet" href="css/style1.css">
-</head>
+<?php require "components/header.php"; ?>
+<?php require "components/navbar.php"; ?>
+<link rel="stylesheet" href="css/style2.css">
 <body>
-!
+
 <div>
 <h1>Blogs<h1> 
   <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>'/>
