@@ -1,3 +1,3 @@
 <?php
-include('router.php');
+echo "cau";
 ?>
