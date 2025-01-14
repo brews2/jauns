@@ -18,7 +18,7 @@ $posts = $db->query($sql, $params)->fetchAll();
 
 $pageTitle = "Blogs";
 $style = "css/style1.css";
-require "views/index.view.php";
+require "views/posts/index.view.php";
 
 
 

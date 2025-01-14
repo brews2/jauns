@@ -1,5 +1,5 @@
-<?php require "components/header.php"; ?>
-<?php require "components/navbar.php"; ?>
+<?php require "views/components/header.php"; ?>
+<?php require "views/components/navbar.php"; ?>
 <link rel="stylesheet" href="css/style2.css">
 <body>
 
@@ -15,7 +15,7 @@
 <?php } ?>
 <ul>
  <?php foreach($posts as $post){ ?>
-  <li>  <?= $post["content"] ?> </li>
+  <li> <a href="show?id=<?= $post["id"] ?>"> <?= $post["content"] ?></a> </li>
 <?php } ?>
 </ul>
 </div>
