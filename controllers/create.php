@@ -1,29 +1,19 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $content = $_POST["content"];
-    
-    $sql = "INSERT INTO posts (content) VALUES (:content)";
-    
-    $params = ["content" => $content];
 
-    try {
-        $result = $db->query($sql, $params);
 
-       
-        var_dump($result);  
-        
-        $lastInsertId = $db->lastInsertId();
-        var_dump($lastInsertId);  
-        
-    } catch (Exception $e) {
-       
-        echo "Kļūda: " . $e->getMessage();
-    }
-    
-  
-    header("Location: /");
-    exit();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+$sql = "INSERT INTO posts (content) VALUES ( :content );";
+$params = ["content" => $_POST["content"]];
+$posts = $db ->query($sql, $params)->fetchAll();
+header("Location: /"); exit();
+$errors = [];
+if (!isset($_POST["content"]) || ){
+
+
+}
 }
 
 
