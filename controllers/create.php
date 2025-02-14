@@ -1,21 +1,31 @@
 <?php
 
-
-
+$errors = [];  
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-$sql = "INSERT INTO posts (content) VALUES ( :content );";
-$params = ["content" => $_POST["content"]];
-$posts = $db ->query($sql, $params)->fetchAll();
-header("Location: /"); exit();
-$errors = [];
-if (!isset($_POST["content"]) || ){
+    
+    $content = $_POST["content"] ?? '';  
 
 
+    if (empty($content)) {
+        $errors["content"] = "Content is required.";  
+    }
+
+    
+    if (strlen($content) > 50) {
+        $errors["content"] = "Content cannot be longer than 50 characters.";
+    }
+    
+    
+    if (empty($errors)) {
+        $sql = "INSERT INTO posts (content) VALUES (:content);";
+        $params = ["content" => $content];
+        $db->query($sql, $params);
+        
+        header("Location: /");  
+        exit();
+    }
 }
-}
 
-
-require "views/posts/create.view.php";
+require "views/posts/create.view.php";  
 ?>
