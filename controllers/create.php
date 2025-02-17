@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     if (strlen($content) > 50) {
-        $errors["content"] = "Content cannot be longer than 50 characters.";
+        $errors["content"] = "Blogs nedrikst parsniegt 50 simbolus!";
     }
     
     
