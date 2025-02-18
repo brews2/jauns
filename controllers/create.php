@@ -1,5 +1,10 @@
 <?php
 
+require "Validator.php";
+$validator = new Validator();
+
+
+
 $errors = [];  
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     
-    if (strlen($content) > 50) {
+    if (!Validator::string($_POST["content"], max: 50)) {
         $errors["content"] = "Blogs nedrikst parsniegt 50 simbolus!";
     }
     
